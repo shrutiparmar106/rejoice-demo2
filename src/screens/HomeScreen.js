@@ -38,6 +38,14 @@ const HomeScreen = () => {
     }
   }, []);
 
+  const ListEmptyComponent = () => {
+    return (
+      <View style={styles.emptyContainer}>
+        <Text style={styles.emptyText}>No Products Found.</Text>
+      </View>
+    );
+  };
+
   return (
     <>
       <SafeAreaView />
@@ -45,6 +53,7 @@ const HomeScreen = () => {
         <Text style={styles.productListText}>{texts.productList}</Text>
         <FlatList
           data={productList}
+          ListEmptyComponent={ListEmptyComponent}
           showsVerticalScrollIndicator={false}
           style={styles.listStyle}
           extraData={productList}
@@ -109,4 +118,14 @@ const styles = StyleSheet.create({
   contentContainerStyle: {
     paddingBottom: hp('5%'),
   },
+  emptyContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: hp('100%'),
+  },
+  emptyText:{
+    fontSize: hp('2%'),
+    color: colors.black,
+    marginTop: hp('0.5%'),
+  }
 });

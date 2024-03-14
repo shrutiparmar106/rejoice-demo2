@@ -32,5 +32,6 @@ const styles = StyleSheet.create({
     borderColor: colors.primary,
     borderRadius: 15,
     paddingHorizontal: wp('5%'),
+    color: colors.black,
   },
 });
